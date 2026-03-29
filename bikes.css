@@ -1,0 +1,393 @@
+*{
+     margin: 0%;
+     padding: 0%;
+     box-sizing: border-box;
+}
+.bikes-main-div{
+              background-image: linear-gradient(black,grey);
+              height: 100vh;
+              color: white;
+              display: flex;
+              align-items: center;
+              justify-content: start;
+              flex-direction: column;
+}
+.bike-heading{
+              margin-top: 80px;
+              font-size: 40px;
+              border-bottom: 2px solid white;
+               
+}
+.navbar{
+    position: fixed;
+    z-index: 3000;
+    width: 95%;
+    height: 10%;
+    padding: 0 10px;
+    left: 2.5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: blur(5px);
+    animation: navbar-move 2s ease-in 0s forwards;
+}
+@keyframes navbar-move {
+  0%{
+       top: -50%;
+  }
+  100%{
+    top: 2%;
+
+  }
+  
+}
+
+.logo{
+    height: 100%;
+    width: 6%;
+    
+
+}
+
+.logo img{
+    height: 100%;
+    width: 100%;
+    animation: logo-move 2s ease-in 3s forwards;
+}
+@keyframes logo-move {
+  0%{
+    
+     
+
+  }
+  50%{
+       height: 300px;
+       width: 450px;
+      
+
+  }
+  70%{
+    transform: none;
+  }
+  75%{
+     transform: rotateY(2000deg);
+  }
+  100%{
+        width: 100%;
+        height: 1005;
+  }
+}
+.navbar label{
+     display: none;
+}
+.navbar label i{
+  color: white;
+}
+
+.navbar input{
+    display: none;
+}
+
+ 
+.nav-content{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    z-index: 2500;
+    transform-style: preserve-3d;
+}
+
+.nav-content h2 a{
+    text-decoration: none;
+    color: white;
+}
+
+.nav-content h2{
+    font-weight: 100;
+    transition: all .5s;
+
+}
+.h2-1{
+    animation: h2-1-move 2s ease-in 0s forwards;
+}
+.h2-2{
+    animation: h2-1-move 2s ease-in .2s forwards;
+}
+.h2-3{
+    animation: h2-1-move 2s ease-in .4s forwards;
+}
+.h2-4{
+    animation: h2-1-move 2s ease-in .6s forwards;
+}
+.h2-5{
+    animation: h2-1-move 2s ease-in .8s forwards;
+}
+.h2-6{
+    animation: h2-1-move 2s ease-in 1s forwards;
+}
+
+@keyframes h2-1-move {
+
+  0%{
+    margin-top: -200px;
+    opacity: 0;
+     
+  }
+  100%{
+     margin-top: 0px;
+     opacity: 1;
+  }
+  
+}
+
+   .nav-content h2:hover {
+                        border: 2px solid red;
+                        box-shadow: 0px 0px 20px red, inset 0px 0px 20px red;
+                        border-radius: 50px;
+                        padding: 5px 20px;
+                        transform: translateZ(50px);
+                        font-weight: 800;
+                        
+    }
+       .nav-content h2:hover a{
+                        /* text-shadow: 0px 0px 20px orange, inset 0px 0px 20px orange; */
+                       
+       }
+ 
+
+
+@media only screen and (min-width:768px) and (max-width:1160px){
+
+ 
+}
+
+
+/* ✅ Tablet & Mobile */
+@media only screen and (max-width:768px){
+      .navbar label{
+     display: block;
+}
+
+    /* ✅ Mobile Menu Hidden */
+    .nav-content{
+        position: absolute;
+        top: 100px;
+        flex-direction: column;
+        background-color: grey;
+        width: 70%;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(255,255,255,0.2);
+        left: -150%;
+        transition: 0.5s;
+        z-index: 2500;
+    }
+ 
+
+    /* ✅ Toggle Menu */
+    #bars:checked ~ .nav-content{
+        left: 0%;
+    }
+ 
+    .logo{
+        width: 8%;
+    }
+}
+
+
+/* ✅ Small Mobile */
+@media only screen and (max-width:500px){
+
+    .nav-content{
+        width: 80%;
+        left: -150%;
+        z-index: 2500;
+    }
+    .navbar label{
+     display: block;
+}
+
+    #bars:checked ~ .nav-content{
+        left: 0%;
+    }
+
+  
+ 
+    .logo{
+         width: 12%;
+    }
+}
+.bikes-main-container{
+                      height: 80vh;
+                      width: 90%;
+
+                      display: flex;
+                      align-items: center;
+                      justify-content:space-between;
+                      /* border: 2px solid red; */
+                      overflow-x: hidden;
+                      flex-wrap: wrap;
+                      
+}
+.bikeContent-container{
+                     width: 23%;
+
+                     border: 2px solid orange;
+
+                     border-radius: 10px;
+                     display: flex;
+                     align-items: center;
+                     justify-content: center;
+                     flex-direction: column;
+                     padding: 20px;
+                     position: relative;
+                     animation-name: move-container;
+                     animation-duration: 1s;
+                     animation-timing-function: ease-in-out;
+                     animation-fill-mode: forwards;
+                     left: -500%;
+
+}
+@keyframes move-container {
+    0%{
+         left: -500%;
+    }
+    100%{
+         left: 0%;
+    }
+    
+}
+.bike-img{
+          height: 200px;
+          width: 90%;
+          padding: 10px;
+          border: 2px solid skyblue;
+          box-shadow: 0px 0px 15px skyblue, inset 0px 0px 15px skyblue;                       
+          border-radius: 10px;
+          animation: move-image-container .5s ease-in 1s forwards;
+           position: relative;
+           top: -400px;
+}
+@keyframes  move-image-container {
+                                 
+                   0%{
+                      top: -400px;
+                   }
+                   100%{
+                    top: 0px;
+                   }
+    
+}
+.bike-img img{
+             height: 100%;
+             width: 100%;
+             transition: all 2s;
+             position: relative;
+             left: 450%;
+             animation-name: bike-move;
+             animation-duration: 1.5s;
+             animation-timing-function: ease-in-out;
+             animation-fill-mode: forwards;
+             animation-delay: 1.5s;
+             opacity: 0;
+}
+@keyframes  bike-move {
+
+                      0%{
+                         left: 450%;
+                         opacity: 0;
+                      }
+                      50%{
+                        opacity: .2;
+                      }
+                      100%{
+                           left: 0%;
+                           opacity: 1;
+                      }
+    
+}
+.bikeContent-container-2 img{
+               scale: 1.4 1;
+                
+}
+
+.bikeContent-container:hover .bike-img img{
+               scale: 1.7 1.9;
+               margin-top: -60px;
+}
+ .bikeContent-container-4:hover  .bike-img img{
+               scale: 1.5 1.7;
+                        
+ }
+ .bikeContent-container-2:hover .bike-img img{
+               scale: 2.3 1.6;
+               margin-top: -60px;
+
+                
+}
+.bikeContent-container h2{
+               margin-top: 20px;
+}
+
+
+
+.bikeContent-container button{
+                              width: 60%;
+                              height: 45px;
+                              border-radius: 50px;
+                              border: 2px solid lime;
+                              background-color: transparent;
+                              box-shadow: 0px 0px 15px lime, inset 0px 0px 15px lime;                       
+                              font-size: 20px;
+                              color: white;
+               margin-top: 20px;
+
+}
+.bikeContent-container button a{
+                                color: white;
+                                text-decoration: none;
+}
+.bike-center{
+               position: absolute;
+               width: 30%;
+               height: 60px;
+               background-color: black;
+               border: 2px solid orange;
+               border-radius: 50px;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               right: -22%;
+               z-index: 999;
+               bottom: 30%;
+}
+.bike-center img{
+                height: 120%;
+                width: 150%;
+                /* background-color: black; */
+                
+
+}
+@media only screen and (min-width:600px) and (max-width:900px){
+                   
+     .bikeContent-container{
+                            width: 47%;
+                            margin-top: 20px;
+     }
+    
+}
+@media only screen and (min-width:300px) and (max-width:600px){
+.bikes-main-container{
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+}
+     .bikeContent-container{
+                            width: 80%;
+                            margin-top: 20px;
+     }
+.bike-center {
+    display: none;
+}
+    
+}

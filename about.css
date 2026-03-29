@@ -1,0 +1,385 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+.about-main-container{
+                      display: flex;
+                      justify-content: flex-start;
+                      flex-direction: column;
+                      min-height: 100vh;
+                      border: 5px inset grey;
+                      align-items: center;
+                                background-image: linear-gradient(black,grey);
+
+                      color: white;
+                      overflow: hidden;
+}
+/* ✅ Navbar (always on top) */
+.navbar{
+    position: fixed;
+    z-index: 3000;
+    width: 95%;
+    height: 10%;
+    padding: 0 10px;
+    left: 2.5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: blur(5px);
+    animation: navbar-move 2s ease-in 0s forwards;
+}
+@keyframes navbar-move {
+  0%{
+       top: -50%;
+  }
+  100%{
+    top: 2%;
+
+  }
+  
+}
+
+.logo{
+    height: 100%;
+    width: 6%;
+    
+
+}
+
+.logo img{
+    height: 100%;
+    width: 100%;
+    animation: logo-move 2s ease-in 3s forwards;
+}
+@keyframes logo-move {
+  0%{
+    
+     
+
+  }
+  50%{
+       height: 300px;
+       width: 450px;
+      
+
+  }
+  70%{
+    transform: none;
+  }
+  75%{
+     transform: rotateY(2000deg);
+  }
+  100%{
+        width: 100%;
+        height: 1005;
+  }
+}
+.navbar label{
+     display: none;
+}
+.navbar label i{
+  color: white;
+}
+
+.navbar input{
+    display: none;
+}
+
+/* ✅ Desktop Nav */
+.nav-content{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    z-index: 2500;
+    transform-style: preserve-3d;
+}
+
+.nav-content h2 a{
+    text-decoration: none;
+    color: white;
+}
+
+.nav-content h2{
+    font-weight: 100;
+    transition: all .5s;
+
+}
+.h2-1{
+    animation: h2-1-move 2s ease-in 0s forwards;
+}
+.h2-2{
+    animation: h2-1-move 2s ease-in .2s forwards;
+}
+.h2-3{
+    animation: h2-1-move 2s ease-in .4s forwards;
+}
+.h2-4{
+    animation: h2-1-move 2s ease-in .6s forwards;
+}
+.h2-5{
+    animation: h2-1-move 2s ease-in .8s forwards;
+}
+.h2-6{
+    animation: h2-1-move 2s ease-in 1s forwards;
+}
+
+@keyframes h2-1-move {
+
+  0%{
+    margin-top: -200px;
+    opacity: 0;
+     
+  }
+  100%{
+     margin-top: 0px;
+     opacity: 1;
+  }
+  
+}
+
+   .nav-content h2:hover {
+                        border: 2px solid red;
+                        box-shadow: 0px 0px 20px red, inset 0px 0px 20px red;
+                        border-radius: 50px;
+                        padding: 5px 20px;
+                        transform: translateZ(50px);
+                        font-weight: 800;
+                        
+    }
+       .nav-content h2:hover a{
+                        /* text-shadow: 0px 0px 20px orange, inset 0px 0px 20px orange; */
+                       
+       }
+ 
+
+
+@media only screen and (min-width:768px) and (max-width:1160px){
+
+ 
+}
+
+
+/* ✅ Tablet & Mobile */
+@media only screen and (max-width:768px){
+      .navbar label{
+     display: block;
+}
+
+    /* ✅ Mobile Menu Hidden */
+    .nav-content{
+        position: absolute;
+        top: 100px;
+        flex-direction: column;
+        background-color: grey;
+        width: 70%;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(255,255,255,0.2);
+        left: -150%;
+        transition: 0.5s;
+        z-index: 2500;
+    }
+    
+    #bars{
+        color: white;
+    }
+
+    /* ✅ Toggle Menu */
+    #bars:checked ~ .nav-content{
+        left: 0%;
+    }
+ 
+    .logo{
+        width: 8%;
+    }
+}
+
+
+/* ✅ Small Mobile */
+@media only screen and (max-width:500px){
+
+    .nav-content{
+        width: 80%;
+        left: -150%;
+        z-index: 2500;
+    }
+    .navbar label{
+     display: block;
+}
+
+    #bars:checked ~ .nav-content{
+        left: 0%;
+    }
+
+  
+ 
+    .logo{
+         width: 12%;
+    }
+}
+.about-heading{
+               font-size: 30px;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               animation-name: heading-about;
+               animation-fill-mode: forwards;
+               animation-duration: 2s;
+               
+               /* border: 2px solid red; */
+}
+@keyframes heading-about {
+    0%{
+        margin-top: -400px;
+    }
+    100%{
+         margin-top: 80px;
+    }
+}
+.about-mainContent-container{
+                             display: flex;
+                             justify-content: space-evenly;
+}
+.about-contentComm{
+                   width: 50%;
+}
+.about-contentContainer-1{
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-evenly;
+                        flex-direction: column;
+                        height: 70vh;
+                        margin-top: 30px;
+                        border-radius: 10px;
+                        border: 2px solid white;
+                        box-shadow: 0px 0px 15px white, inset 0px 0px 15px white ;
+                        animation-name:container1 ;
+                        animation-duration: 2s;
+                        animation-delay: 2s;
+                        animation-fill-mode: forwards;
+                        opacity: 0;
+                        background-color: black;
+
+                        
+
+}
+@keyframes container1 {
+                        0%{
+                          margin-left: -200%;
+                        }
+                        100%{
+                             margin-right: 0%;
+                             opacity: 1;
+                        }
+}
+.about-contentContainer-1 h1{
+                            font-size: 90px;
+                            letter-spacing: 30px;
+                            font-weight: 900;
+                            margin-left: 30px;
+}
+.about-contentContainer-1 p{
+                            font-size: 22px;
+                            width: 70%;
+                            font-weight:600;
+                            line-height: 1.5;
+
+}
+.about-contentContainer-1 button{
+                              width: 25%;
+                              height: 45px;
+                              border-radius: 50px;
+                              border: 2px solid lime;
+                              background-color: transparent;
+                              box-shadow: 0px 0px 15px lime, inset 0px 0px 15px lime;                       
+                              font-size: 20px;
+                              color: white;
+}
+.about-contentContainer-2{
+                          width: 38%;
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                              animation-name:container2 ;
+                        animation-duration: 2s;
+                        animation-delay: 2s;
+                        animation-fill-mode: forwards;
+                        opacity: 0;
+                        height: 70vh;
+
+                          
+}
+@keyframes container2 {
+                        0%{
+                          margin-right: -200%;
+                        }
+                        100%{
+                             margin-right: 0%;
+                             opacity: 1;
+                        }
+}
+
+.about-contentContainer-2 img{
+                              height: 100%;
+                              width: 100%;
+                        margin-top: 30px;
+}
+@media only screen and (max-width:600px) {
+                           .about-mainContent-container{
+                                  flex-direction: column-reverse;
+                                  width: 95%;
+                                  align-items: center;
+                                  justify-content: center;
+                           }
+                           .about-contentComm{
+                                     width: 90%;
+                           }
+                             .about-contentContainer-1 {
+                                    padding: 5px;
+                             }
+                           .about-contentContainer-1 button,p{
+                                       width: 80%;
+                           }
+                            .about-contentContainer-1 p{
+                                       width: 90%;
+                                       font-size: 16px;
+                            }
+                             .about-contentContainer-1 h1{
+                                          width: 90%;
+                                          font-size: 35px;
+                                          text-align: center;
+                                          margin: 0%;
+                             }
+                             .about-contentContainer-2{
+                                                      height: 50vh;
+                             }
+}
+@media only screen and (min-width:600px) and (max-width:900px) {
+                          .about-main-container{
+                                        padding: 10px;
+                          }
+                           .about-contentComm{
+                                     width: 90%;
+                           }
+                             .about-contentContainer-1 {
+                                    padding: 5px;
+                             }
+                           .about-contentContainer-1 button,p{
+                                       width: 80%;
+                           }
+                            .about-contentContainer-1 p{
+                                       width: 90%;
+                                       font-size: 20px;
+                            }
+                             .about-contentContainer-1 h1{
+                                          width: 90%;
+                                          font-size: 55px;
+                                          text-align: center;
+                                          margin: 0%;
+                             }
+                             .about-contentContainer-2{
+                                                      height: 50vh;
+                                                      align-self: center;
+                             }
+}
