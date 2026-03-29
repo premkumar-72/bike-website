@@ -395,15 +395,28 @@ td{
                           
 }
 
-@media  only screen and (min-width:300px) and (max-width:950px) {
+@media  only screen and (min-width:450px) and (max-width:950px) {
    .contact-content-container{
     gap: 40px;
    }
     .content-container1{
-        width: 85%;
+        width: 100%;
     }
     .content-container2{
-            width: 85%;
+            width: 100%;
+    }
+    
+}
+
+@media  only screen and (min-width:300px) and (max-width:450px) {
+   .contact-content-container{
+    gap: 40px;
+   }
+    .content-container1{
+        width: 100%;
+    }
+    .content-container2{
+            width: 100%;
     }
     
 }
